@@ -1,1 +1,41 @@
-test
+**this app is developed using this next programs being installed in a virtual environment: 
+python v3.10
+django v5.0.0
+oracle 21c
+node.js v20.11.0 (for react.js)
+
+
+**gtk3-runtime, msy2 and weasyprint should be installed,
+
+
+**django-restframework, corsheaders and other libraries should be installed (they will be specified in the consol alongside with other react.js dependencies)
+
+
+**in ./reporting/settings.py , the DATABASES part should be changed depending or you oracle username and password
+
+
+**before the first server run, make an admin by running python manage.py createsuperuser 
+use that superuser to manage the data from the django admin interface 
+
+
+**the endpoint localhost/register is responsible for creating new users
+
+
+**for the first server run, the admin should go to the django admin interface and add units "RA1G, RA1D....CP2K", and "DCRPC" for activity users
+the nature "AAA, ASA"
+the roles exactly as: "inj-ui, chef-dep-ui, directeur-ui, inj-rpc, chef-dep-rpc, directeur-rpc, brq_urgent"
+
+
+
+**the main functionalities:
+filling brq
+access brq on website
+access brq history on website
+fill compte-rendu
+access compte-rendu on website
+access compte-rendu's pdf
+access brq consolidé's history
+access brq consolidé's pdf
+"réclamation" au niveau d'unité opérationelle
+get notified on brq sent and on reclamation
+access dashboard for rpc users
