@@ -1,0 +1,207 @@
+.table-container {
+    margin: 20px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+ 
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .narrow-column {
+    max-width: 200px; /* Réglez la largeur maximale selon vos préférences */
+    overflow: hidden; /* Masque le contenu dépassant de la largeur maximale */
+    text-overflow: ellipsis; /* Affiche des points de suspension (...) pour indiquer que du contenu est masqué */
+    white-space: nowrap; /* Empêche le texte de se renvoyer à la ligne */
+  }
+  
+  table {
+    width: auto;
+    margin-left: 16%;
+    border-collapse: collapse;
+    margin-top: 50px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  .date-rectangle {
+    background-color: #ffffff;
+    /* padding: 10px; */
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 18%;
+    margin-left: 48%;
+}
+    
+    
+  .date-rectangle {
+    text-align: center; /* Centrer le texte */
+    font-weight: lighter; /* Poids de la police plus léger */
+    font-size: 1.2em;
+  }
+  .date-rectangle {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    /* Vous pouvez ajuster les autres styles selon vos besoins */
+  }
+  .claim-button-container {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .claim-input-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .claim-input-container input {
+    margin-bottom: 5px;
+  }
+  
+  .claim-input-container button {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .submit-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  } 
+  
+  .header-container {
+    display: flex; /* Utiliser flexbox pour aligner les éléments sur la même ligne */
+    align-items: center; /* Centrer verticalement les éléments */
+    margin-bottom: 20px; /* Espacement en bas */
+  }
+  
+  .image {
+  width: 120px; /* Réduire la largeur maximale de l'image */
+    height: auto; /* Permettre à la hauteur de s'ajuster automatiquement */
+    margin-left: 250px; /* Déplacer l'image vers la gauche */
+  }
+  .activite {
+    text-align: center; /* Centrer le texte */
+    /* font-size: 1.9em; Taille de la police */
+    margin-left: 220px; /* Déplacer l'image vers la gauche */
+
+  }
+  
+  .submit-button-container {
+    margin-top: 140px;
+    display: flex;
+    justify-content: flex-end; /* Aligner le bouton à droite */
+  }
+  
+  .submit-button {
+    /* background-color: orange; */
+    color: white;
+    font-size: large;
+    /* padding: 24px 40px; Ajuster la taille du bouton */
+    border: none;
+    border-radius: 8px; /* Arrondir un peu plus les coins */
+    cursor: pointer;
+    margin-right: 20px; /* Ajouter une marge à droite pour l'écart */
+  }
+  .success-alert {
+    background-color: #aef3b0; /* Vert clair */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Espacement intérieur */
+    border-radius: 5px; /* Bords arrondis */
+    text-align: center; /* Centrage du texte */
+    margin-left: 50%;
+    width: 170px;
+    margin-top: 0;
+    font-weight: bold; /* Texte en gras */
+    font-size: 17px; /* Taille du texte plus grande */
+
+
+  }
+  
+  
+  .submit-button:hover {
+    background-color: darkorange;
+  }
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .submit-button1{
+    background-color: orange; 
+    color: white;
+    font-size: large;
+    /* padding: 24px 40px; */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 250px;
+  } 
+  .activity-header h1 {
+    flex: 1;
+  }
+  
+  .print-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF; /* Couleur de fond bleue */
+    margin-left: auto; /* Pousse le bouton à droite */
+    
+  }
+  .print-button1 {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF; /* Couleur de fond bleue */
+    margin-left: auto; /* Pousse le bouton à droite */
+    
+  }
+ 

@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BRQ Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%; 
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            white-space: normal; 
+            font-size: 12px;
+            word-wrap: break-word; 
+            vertical-align: middle; 
+        }
+        th {
+            background-color: #f2f2f2;
+            height: auto; /* Allow height to adjust based on content */
+            text-align: center; /* Center text horizontally */
+        }
+        .long-cell {
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .centered {
+            text-align: center; 
+        }
+        .structure-col {
+            width: 70px; 
+        }
+        .des-sus-col {
+            width: 69px; 
+        }
+        .cause-col {
+            width: 54px; 
+        }
+        .heur-col {
+            width: 35px; 
+        }
+        .logo-container {
+            text-align: left; 
+            margin-bottom: 20px; 
+        }
+        .logo-container img {
+            height: 150px; 
+            width: auto; 
+        }
+        @page {
+            size: landscape;
+        }
+    </style>
+</head>
+<body>
+<div class="logo-container">
+    <img src="{% static 'logosonatrach.png' %}" class="logo" alt="Company Logo">
+</div>
+<div style="text-align: center;">
+    <h1 style="font-weight: bold; text-decoration: underline;">Bulletin de Reporting Quotidien (BRQ)</h1>
+    <h3>{{ date }}</h3>
+    <h4 style="font-weight: bold; text-decoration: underline;">Activité raffinage et Pétrochimie</h4>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th class="structure-col" rowspan="2">Structure</th>
+        <th rowspan="2">Date</th>
+        <th class="heur-col" rowspan="2">Heure</th>
+        <th rowspan="2">Lieu</th>
+        <th rowspan="2">Nature</th>
+        <th class="des-sus-col" rowspan="2">Description Succincte</th>
+        <th class="cause-col" rowspan="2">Cause de l'incident/accident</th>
+        <th colspan="4" class="centered">Fatalités</th>
+        <th rowspan="2">Nombre Blessés</th>
+        <th colspan="3" class="centered">Description</th>
+        <th rowspan="2">Dispositions prises</th>
+    </tr>
+    <tr>
+        <th class="centered">Entreprise</th>
+        <th class="centered">Prestataire</th>
+        <th class="centered">Tiers</th>
+        <th class="centered">Étrangers</th>
+        <th class="centered">Corporels</th>
+        <th class="centered">Matériels</th>
+        <th class="centered">Environnementaux</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="structure-col" rowspan="{{ row_span_top }}">Division Exploitation Raffinage</td>
+        {% if has_top_brqs %}
+            <td>{{ brq_data_top.0.date_ai }}</td>
+            <td>{{ brq_data_top.0.temp_ai }}</td>
+            <td>{{ brq_data_top.0.site_ai.nom }}{{ brq_data_top.0.lieu_ai }}</td>
+            <td>{{ brq_data_top.0.nature_ai.nom }}</td>
+            <td>{{ brq_data_top.0.desc_succincte }}</td>
+            <td>{{ brq_data_top.0.cause_ai }}</td>
+            <td class="centered">{{ brq_data_top.0.fatal_entre_prise }}</td>
+            <td class="centered">{{ brq_data_top.0.fatal_prestataire }}</td>
+            <td class="centered">{{ brq_data_top.0.fatal_tiers }}</td>
+            <td class="centered">{{ brq_data_top.0.fatal_etrangers }}</td>
+            <td class="centered">{{ brq_data_top.0.nbr_blesse }}</td>
+            <td class="centered">{{ brq_data_top.0.desc_degats_corporels }}</td>
+            <td class="centered">{{ brq_data_top.0.desc_degats_materiels }}</td>
+            <td class="centered">{{ brq_data_top.0.desc_degats_environnementaux }}</td>
+            <td>{{ brq_data_top.0.dispositons_prise }}</td>
+        </tr>
+        {% for brq in brq_data_top|slice:"1:" %}
+        <tr>
+            <td>{{ brq.date_ai }}</td>
+            <td>{{ brq.temp_ai }}</td>
+            <td>{{ brq.site_ai.nom }}{{ brq.lieu_ai }}</td>
+            <td>{{ brq.nature_ai.nom }}</td>
+            <td>{{ brq.desc_succincte }}</td>
+            <td>{{ brq.cause_ai }}</td>
+            <td class="centered">{{ brq.fatal_entre_prise }}</td>
+            <td class="centered">{{ brq.fatal_prestataire }}</td>
+            <td class="centered">{{ brq.fatal_tiers }}</td>
+            <td class="centered">{{ brq.fatal_etrangers }}</td>
+            <td class="centered">{{ brq.nbr_blesse }}</td>
+            <td class="centered">{{ brq.desc_degats_corporels }}</td>
+            <td class="centered">{{ brq.desc_degats_materiels }}</td>
+            <td class="centered">{{ brq.desc_degats_environnementaux }}</td>
+            <td>{{ brq.dispositons_prise }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td>/</td>
+        <td>/</td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td class="structure-col" rowspan="{{ row_span_bottom }}">Division Exploitation Petrochimie</td>
+        {% if has_bottom_brqs %}
+            <td>{{ brq_data_bottom.0.date_ai }}</td>
+            <td>{{ brq_data_bottom.0.temp_ai }}</td>
+            <td>{{ brq_data_bottom.0.site_ai.nom }}{{ brq_data_bottom.0.lieu_ai }}</td>
+            <td>{{ brq_data_bottom.0.nature_ai.nom }}</td>
+            <td>{{ brq_data_bottom.0.desc_succincte }}</td>
+            <td>{{ brq_data_bottom.0.cause_ai }}</td>
+            <td class="centered">{{ brq_data_bottom.0.fatal_entre_prise }}</td>
+            <td class="centered">{{ brq_data_bottom.0.fatal_prestataire }}</td>
+            <td class="centered">{{ brq_data_bottom.0.fatal_tiers }}</td>
+            <td class="centered">{{ brq_data_bottom.0.fatal_etrangers }}</td>
+            <td class="centered">{{ brq_data_bottom.0.nbr_blesse }}</td>
+            <td class="centered">{{ brq_data_bottom.0.desc_degats_corporels }}</td>
+            <td class="centered">{{ brq_data_bottom.0.desc_degats_materiels }}</td>
+            <td class="centered">{{ brq_data_bottom.0.desc_degats_environnementaux }}</td>
+            <td>{{ brq_data_bottom.0.dispositons_prise }}</td>
+        </tr>
+        {% for brq in brq_data_bottom|slice:"1:" %}
+        <tr>
+            <td>{{ brq.date_ai }}</td>
+            <td>{{ brq.temp_ai }}</td>
+            <td>{{ brq.site_ai.nom }}{{ brq.lieu_ai }}</td>
+            <td>{{ brq.nature_ai.nom }}</td>
+            <td>{{ brq.desc_succincte }}</td>
+            <td>{{ brq.cause_ai }}</td>
+            <td class="centered">{{ brq.fatal_entre_prise }}</td>
+            <td class="centered">{{ brq.fatal_prestataire }}</td>
+            <td class="centered">{{ brq.fatal_tiers }}</td>
+            <td class="centered">{{ brq.fatal_etrangers }}</td>
+            <td class="centered">{{ brq.nbr_blesse }}</td>
+            <td class="centered">{{ brq.desc_degats_corporels }}</td>
+            <td class="centered">{{ brq.desc_degats_materiels }}</td>
+            <td class="centered">{{ brq.desc_degats_environnementaux }}</td>
+            <td>{{ brq.dispositons_prise }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td class="centered">/</td>
+        <td>/</td>
+        <td>/</td>
+        </tr>
+        {% endif %}
+        </tbody>
+</table>
+
+</body>
+</html>

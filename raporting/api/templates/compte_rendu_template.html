@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compte Rendu</title>
+    <style>
+        table {
+            width: 98%;
+            margin: 0 auto;
+            table-layout: fixed;
+            word-wrap: break-word;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            height: 100px;
+        }
+        th[colspan="2"] {
+            vertical-align: middle;
+        }
+        strong.title {
+            text-decoration: underline;
+        }
+        .image-cell {
+            text-align: center; /* Center align the content of the cell */
+        }
+        .image-cell img {
+            display: block;
+            margin: auto; /* Center the image within the cell */
+            height: 100px; /* Maintain the height of the image */
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="image-cell" style="height: 100px;">
+                    <img src="{{ image_url }}" alt="Your Image" />
+                </th>
+                <th colspan="2" style="height: 100px;"><strong class="title">Compte-rendu d’accident / incident</strong></th>
+                <th style="height: 100px;"><strong class="title">1. Référence :</strong> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" style="height: 50px;"><strong class="title">2. Site :</strong> {{ brq_instance.site_ai.nom }}</td>
+                <td colspan="2" style="height: 50px;"><strong class="title">3. Lieu :</strong> {{ brq_instance.lieu_ai }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 50px;"><strong class="title">4. Date :</strong> {{ brq_instance.date_ai }}</td>
+                <td colspan="2" style="height: 50px;"><strong class="title">5. Heure :</strong> {{ brq_instance.temp_ai }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height: 50px;"><strong class="title">6. Description du lieu et des installations impliquées :</strong> {{ brq_instance.desc_lieu }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height: 50px;"><strong class="title">7. Description de l’événement déroulement des faits :</strong> {{ brq_instance.desc_deroulement }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height: 15px;"><strong class="title">8. Description des dommages avérés et potentiels</strong></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 50px;"><strong class="title">Aux personnes :</strong> {{ brq_instance.desc_dmg_personne }}</td>
+                <td style="height: 50px;"><strong class="title">À l’environnement:</strong> {{ brq_instance.desc_dmg_env }}</td>
+                <td style="height: 50px;"><strong class="title">Aux biens :</strong> {{ brq_instance.desc_dmg_biens }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height: 50px;"><strong class="title">9. Causes évidentes :</strong> {{ brq_instance.cause_ai }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 180px;"><strong class="title">10. Etablissement du CR (nom, date, visa)</strong></td>
+                <td colspan="2" style="height: 180px;"><strong class="title">11. Validation du CR (nom, date, visa)</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

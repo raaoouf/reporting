@@ -1,0 +1,55 @@
+/* Pre.css */
+.background {
+  height: 100vh;
+  background-image: url('petrochen.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* Pre.css */
+
+
+
+.contact {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+  
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  position: absolute;
+  top: 20px;
+  text-decoration: none; /* Supprimer le soulignement du lien */
+
+  right: 20px;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: darkblue;
+}

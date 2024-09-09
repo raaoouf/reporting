@@ -1,0 +1,99 @@
+/* Styles pour l'arrière-plan de la page */
+body {
+    margin:0;
+    padding:0;
+    
+}
+main {
+  margin :0;
+  
+
+
+}
+.error-message {
+  color: red;
+}
+
+  /* Styles pour l'arrière-plan de la page de connexion */
+.signin-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Yas.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 203vh;
+    background-repeat: no-repeat;
+}
+
+  .signin-container {
+    background-color: rgb(255, 255, 255); /* Couleur de fond semi-transparente */
+    padding: 40px; /* Ajoute un espacement autour du contenu (augmenté pour agrandir le conteneur) */
+    border-radius: 10px; /* Arrondit les coins du conteneur */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    width: 550px; /* Définit une largeur maximale pour le conteneur (augmentée pour agrandir le conteneur) */
+    height: 430px;
+
+  }
+  
+  
+  /* Styles pour la photo en haut de la page */
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .header-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 30%;
+    
+  }
+  
+  /* Styles pour le formulaire de connexion */
+  .form-group {
+    margin-top: 20px; /* Espacement entre les champs de formulaire */
+    margin-left: 10px;
+  }
+  
+  /* Styles pour le bouton de soumission */
+
+  
+  /* Styles pour les étiquettes des champs de formulaire */
+  label {
+    display: block; /* Affiche chaque étiquette sur une ligne différente */
+    margin-bottom: 2px; /* Espacement entre les étiquettes et les champs de formulaire */
+  }
+  
+  /* Styles pour les champs de formulaire */
+  input {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    margin-left: 2px;
+    border-radius: 5px; /* Arrondit les coins du champ */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    box-sizing: border-box; /* Inclut les rembourrages et les bordures dans la largeur et la hauteur */
+    font-size: 16px; /* Taille de la police */
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+  /* Styles pour le bouton de soumission */
+  button[type="submit"]  {
+    width: 40%; /* Occupe toute la largeur du conteneur */
+    margin-left: 30%;
+    padding: 10px; /* Ajoute un espacement interne */
+    background-color: #e88835; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Supprime la bordure du bouton */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    cursor: pointer; /* Change le curseur au survol */
+    font-size: 16px; /* Taille de la police */
+  }
+  
+  button[type="submit"] :hover {
+    background-color: #e88835; /* Couleur de fond du bouton au survol */
+  }
+  
